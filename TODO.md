@@ -19,8 +19,8 @@
 
 ## Admin (Protected Area)
 1. **Admin Dashboard**
-   - [ ] Create an admin dashboard for the protected area.
-   - [ ] Add an additional navigation menu to the protected area (create post, manage posts, create category with manage category).
+- [x] Create an admin dashboard for the protected area.
+- [x] Add an additional navigation menu to the protected area (create post, manage posts, create category with manage category).
 
 2. **Manage Posts and Categories**
    - [ ] List all user-specific posts and categories.
