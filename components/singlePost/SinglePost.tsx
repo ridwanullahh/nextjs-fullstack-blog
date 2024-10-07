@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { FaCopy, FaBookmark, FaShareAlt } from 'react-icons/fa';
 import { toast } from '@/components/ui/use-toast';
-import { CommentsSkeleton } from '../comments/Comments';
+
 import { useCurrentUser } from '@/hooks/use-current-user';
 import profileDefaultImage from '@/public/profile.png';
 import Menu from '@/components/menu/Menu';
