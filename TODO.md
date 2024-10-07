@@ -9,7 +9,7 @@
 - [x] Remove/Disable comments and commenting on the post reading page.
 
 2. **Category Archive Page**
-   - [ ] Improve all the category archive page UI to be more modern and user-friendly.
+- [x] Improve all the category archive page UI to be more modern and user-friendly.
 
 3. **Navigation**
    - [ ] Make the recent posts and all posts navigation to be infinite scroll and not next/prev.
