@@ -1,4 +1,4 @@
-import Pagination, { PaginationSkeleton } from '../pagination/Pagination';
+import { useState, useEffect, useCallback } from 'react';
 import Card, { CardSkeleton } from '../card/Card';
 import styles from './cardList.module.css';
 import { getAllPosts } from '@/lib/requests';
@@ -8,8 +8,35 @@ type CardListProps = {
   cat?: string | undefined;
 };
 
-export const CardList = async ({ page, cat }: CardListProps) => {
-  const { posts, count } = await getAllPosts(page, cat);
+export const CardList = ({ page, cat }: CardListProps) => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const fetchPosts = useCallback(async () => {
+    setLoading(true);
+    const { posts: newPosts, count } = await getAllPosts(page, cat);
+    setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+    setHasMore(newPosts.length > 0);
+    setLoading(false);
+  }, [page, cat]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || loading || !hasMore) {
+        return;
+      }
+      fetchPosts();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loading, hasMore, fetchPosts]);
+
 
   const POST_PER_PAGE = 2;
 
@@ -24,7 +51,7 @@ export const CardList = async ({ page, cat }: CardListProps) => {
           <Card item={item} key={index} />
         ))}
       </div>
-      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      {loading && <CardSkeleton />}
     </div>
   );
 };
