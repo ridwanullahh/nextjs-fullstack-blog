@@ -15,6 +15,11 @@ const ManageCategories = () => {
     ]);
   }, []);
 
+  const handleEdit = (id) => {
+    // Handle edit logic here
+    console.log('Category edited:', id);
+  };
+
   const handleDelete = (id) => {
     // Handle delete logic here
     console.log('Category deleted:', id);
@@ -35,6 +40,7 @@ const ManageCategories = () => {
             <tr key={category.id}>
               <td>{category.name}</td>
               <td>
+                <button onClick={() => handleEdit(category.id)}>Edit</button>
                 <button onClick={() => handleDelete(category.id)}>Delete</button>
               </td>
             </tr>

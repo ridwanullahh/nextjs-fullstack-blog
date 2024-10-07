@@ -15,6 +15,11 @@ const ManagePosts = () => {
     ]);
   }, []);
 
+  const handleEdit = (id) => {
+    // Handle edit logic here
+    console.log('Post edited:', id);
+  };
+
   const handleDelete = (id) => {
     // Handle delete logic here
     console.log('Post deleted:', id);
@@ -50,6 +55,7 @@ const ManagePosts = () => {
                 </select>
               </td>
               <td>
+                <button onClick={() => handleEdit(post.id)}>Edit</button>
                 <button onClick={() => handleDelete(post.id)}>Delete</button>
               </td>
             </tr>
