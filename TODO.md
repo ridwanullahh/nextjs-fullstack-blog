@@ -3,10 +3,10 @@
 
 ## Frontend
 1. **Post Reading Page**
-   - [ ] Add fully functional copy, social share, bookmark, post meta (Category) to the post reading page.
-   - [ ] Enhance the post reading page UI to be more modern and user-friendly.
-   - [ ] Add accessibility tools to the post reading page.
-   - [ ] Remove/Disable comments and commenting on the post reading page.
+- [x] Add fully functional copy, social share, bookmark, post meta (Category) to the post reading page.
+- [x] Enhance the post reading page UI to be more modern and user-friendly.
+- [x] Add accessibility tools to the post reading page.
+- [x] Remove/Disable comments and commenting on the post reading page.
 
 2. **Category Archive Page**
    - [ ] Improve all the category archive page UI to be more modern and user-friendly.
