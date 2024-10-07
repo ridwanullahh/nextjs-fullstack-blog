@@ -5,21 +5,22 @@
  ⚠ Port 3000 is in use, trying 3001 instead.
  ⚠ Port 3001 is in use, trying 3002 instead.
  ⚠ Port 3002 is in use, trying 3003 instead.
+ ⚠ Port 3003 is in use, trying 3004 instead.
   ▲ Next.js 14.2.11
-  - Local:        http://localhost:3003
+  - Local:        http://localhost:3004
 
  ✓ Starting...
- ✓ Ready in 2.5s
- ✓ Compiled /middleware in 469ms (241 modules)
+ ✓ Ready in 1875ms
+ ✓ Compiled /middleware in 494ms (241 modules)
 [31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
     at assertConfig (webpack-internal:///(middleware)/./node_modules/next-auth/node_modules/@auth/core/lib/utils/assert.js:66:16)
     at Auth (webpack-internal:///(middleware)/./node_modules/next-auth/node_modules/@auth/core/index.js:88:95)
  ○ Compiling / ...
- ✓ Compiled / in 6.3s (1217 modules)
+ ✓ Compiled / in 1911ms (1073 modules)
 [31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
     at assertConfig (webpack-internal:///(rsc)/./node_modules/next-auth/node_modules/@auth/core/lib/utils/assert.js:66:16)
     at Auth (webpack-internal:///(rsc)/./node_modules/next-auth/node_modules/@auth/core/index.js:88:95)
- HEAD / 200 in 6735ms
+ HEAD / 200 in 2305ms
  ⨯ components/menu/Menu.tsx (17:10) @ Link
  ⨯ ReferenceError: Link is not defined
     at Menu (./components/menu/Menu.tsx:76:103)
