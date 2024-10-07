@@ -2,7 +2,9 @@
 
 import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
-import Comments from '@/components/comments/Comments';
+import { useState } from 'react';
+import { FaCopy, FaBookmark, FaShareAlt } from 'react-icons/fa';
+import { toast } from '@/components/ui/use-toast';
 import { CommentsSkeleton } from '../comments/Comments';
 import { useCurrentUser } from '@/hooks/use-current-user';
 import profileDefaultImage from '@/public/profile.png';
@@ -87,27 +89,58 @@ export const SinglePost = () => {
       ) : (
         <div className={styles.container}>
           <div className={styles.infoContainer}>
-            <div className={styles.textContainer}>
-              <h1 className={styles.title}>{post?.title}</h1>
-              <div className={styles.user}>
-                <div className={styles.userImageContainer}>
-                  <Image
-                    src={post?.user?.image || profileDefaultImage.src}
-                    alt=""
-                    fill
-                    sizes="(50px)"
-                    className={styles.avatar}
-                  />
-                </div>
-
-                <div className={styles.userTextContainer}>
-                  <span className={styles.username}>{post?.user?.name}</span>
-                  <span className={styles.date}>
-                    {new Date(post?.createdAt || '').toDateString()}
-                  </span>
-                </div>
-              </div>
-            </div>
+<div className={styles.textContainer}>
+  <h1 className={styles.title}>{post?.title}</h1>
+  <div className={styles.user}>
+    <div className={styles.userImageContainer}>
+      <Image
+        src={post?.user?.image || profileDefaultImage.src}
+        alt=""
+        fill
+        sizes="(50px)"
+        className={styles.avatar}
+      />
+    </div>
+    <div className={styles.userTextContainer}>
+      <span className={styles.username}>{post?.user?.name}</span>
+      <span className={styles.date}>
+        {new Date(post?.createdAt || '').toDateString()}
+      </span>
+    </div>
+  </div>
+  <div className={styles.postMeta}>
+    <span className={styles.category}>Category: {post?.catSlug}</span>
+    <div className={styles.actions}>
+<button
+  aria-label="Copy link"
+  role="button"
+  onClick={() => {
+    navigator.clipboard.writeText(window.location.href);
+    toast({ title: 'Link copied to clipboard!' });
+  }}
+>
+  <FaCopy />
+</button>
+<button aria-label="Bookmark post" role="button">
+  <FaBookmark />
+</button>
+<button
+  aria-label="Share post"
+  role="button"
+  onClick={() => {
+    const shareData = {
+      title: post?.title,
+      text: post?.desc,
+      url: window.location.href,
+    };
+    navigator.share(shareData).catch(console.error);
+  }}
+>
+  <FaShareAlt />
+</button>
+    </div>
+  </div>
+</div>
 
             {post?.img && (
               <div className={styles.imageContainer}>
@@ -140,9 +173,7 @@ export const SinglePost = () => {
                 className={styles.description}
                 dangerouslySetInnerHTML={{ __html: post?.desc || '' }}
               />
-              <div className={styles.comment}>
-                <Comments postSlug={slug} author={author} />
-              </div>
+
             </div>
             <Menu />
           </div>
