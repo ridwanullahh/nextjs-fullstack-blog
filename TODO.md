@@ -12,7 +12,7 @@
 - [x] Improve all the category archive page UI to be more modern and user-friendly.
 
 3. **Navigation**
-   - [ ] Make the recent posts and all posts navigation to be infinite scroll and not next/prev.
+- [x] Make the recent posts and all posts navigation to be infinite scroll and not next/prev.
 
 4. **Category Listing Page**
    - [ ] Create a category listing page similar to the one on the index.
