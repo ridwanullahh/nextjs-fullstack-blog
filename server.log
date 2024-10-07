@@ -1,0 +1,33 @@
+
+> nextjs-fullstack-blog-ts@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.11
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 2s
+ ✓ Compiled /middleware in 498ms (241 modules)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (webpack-internal:///(middleware)/./node_modules/next-auth/node_modules/@auth/core/lib/utils/assert.js:66:16)
+    at Auth (webpack-internal:///(middleware)/./node_modules/next-auth/node_modules/@auth/core/index.js:88:95)
+ ○ Compiling / ...
+ ✓ Compiled / in 3.6s (1092 modules)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (webpack-internal:///(rsc)/./node_modules/next-auth/node_modules/@auth/core/lib/utils/assert.js:66:16)
+    at Auth (webpack-internal:///(rsc)/./node_modules/next-auth/node_modules/@auth/core/index.js:88:95)
+ HEAD / 200 in 4023ms
+ ⨯ components/menu/Menu.tsx (17:10) @ Link
+ ⨯ ReferenceError: Link is not defined
+    at Menu (./components/menu/Menu.tsx:76:103)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "3893424353"
+[0m [90m 15 |[39m       [33m<[39m[33mh2[39m className[33m=[39m{styles[33m.[39msubtitle}[33m>[39m[33mAll[39m [33mCategories[39m[33m<[39m[33m/[39m[33mh2[39m[33m>[39m[0m
+[0m [90m 16 |[39m       [33m<[39m[33mh1[39m className[33m=[39m{styles[33m.[39mtitle}[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m         [33m<[39m[33mLink[39m href[33m=[39m[32m"/categories"[39m[33m>[39m[33mView[39m [33mAll[39m [33mCategories[39m[33m<[39m[33m/[39m[33mLink[39m[33m>[39m[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m       [33m<[39m[33m/[39m[33mh1[39m[33m>[39m[0m
+[0m [90m 19 |[39m       [33m<[39m[33mh2[39m className[33m=[39m{styles[33m.[39msubtitle}[33m>[39m[33mChosen[39m by the editor[33m<[39m[33m/[39m[33mh2[39m[33m>[39m[0m
+[0m [90m 20 |[39m       [33m<[39m[33mh1[39m className[33m=[39m{styles[33m.[39mtitle}[33m>[39m[33mEditors[39m [33mPick[39m[33m<[39m[33m/[39m[33mh1[39m[33m>[39m[0m

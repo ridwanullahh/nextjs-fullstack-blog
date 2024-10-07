@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useCallback } from 'react';
 import Card, { CardSkeleton } from '../card/Card';
 import styles from './cardList.module.css';
