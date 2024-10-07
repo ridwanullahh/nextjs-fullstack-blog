@@ -1,0 +1,51 @@
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  margin: 50px 0px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primaryColor);
+}
+
+.table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border: 1px solid var(--primaryColor);
+  text-align: left;
+}
+
+.table th {
+  background-color: var(--primaryColor);
+  color: var(--secondaryBackgroundColor);
+}
+
+.table td select {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.table td button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: var(--secondaryBackgroundColor);
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table td button:hover {
+  background-color: var(--primaryHoverColor);
+  color: var(--secondaryBackgroundColor);
+}

@@ -1,0 +1,35 @@
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  margin: 50px 0px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primaryColor);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.menuItem {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primaryColor);
+  background-color: var(--secondaryBackgroundColor);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: var(--primaryColor);
+  color: var(--secondaryBackgroundColor);
+}
