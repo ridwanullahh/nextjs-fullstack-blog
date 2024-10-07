@@ -15,7 +15,7 @@
 - [x] Make the recent posts and all posts navigation to be infinite scroll and not next/prev.
 
 4. **Category Listing Page**
-   - [ ] Create a category listing page similar to the one on the index.
+- [x] Create a category listing page similar to the one on the index.
 
 ## Admin (Protected Area)
 1. **Admin Dashboard**
