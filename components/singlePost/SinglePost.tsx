@@ -90,20 +90,20 @@ export const SinglePost = () => {
         <div className={styles.container}>
           <div className={styles.infoContainer}>
 <div className={styles.textContainer}>
-  <h1 className={styles.title}>{post?.title}</h1>
-  <div className={styles.user}>
-    <div className={styles.userImageContainer}>
+  <h1 className={`${styles.title} text-3xl font-bold mb-4`}>{post?.title}</h1>
+  <div className={`${styles.user} flex items-center mb-4`}>
+    <div className={`${styles.userImageContainer} w-12 h-12 mr-4`}>
       <Image
         src={post?.user?.image || profileDefaultImage.src}
-        alt=""
+        alt="User profile image"
         fill
         sizes="(50px)"
-        className={styles.avatar}
+        className={`${styles.avatar} rounded-full`}
       />
     </div>
     <div className={styles.userTextContainer}>
-      <span className={styles.username}>{post?.user?.name}</span>
-      <span className={styles.date}>
+      <span className={`${styles.username} text-lg font-semibold`}>{post?.user?.name}</span>
+      <span className={`${styles.date} text-sm text-gray-500`}>
         {new Date(post?.createdAt || '').toDateString()}
       </span>
     </div>
@@ -118,11 +118,11 @@ export const SinglePost = () => {
           navigator.clipboard.writeText(window.location.href);
           toast({ title: 'Link copied to clipboard!' });
         }}
-        className={styles.actionButton}
+        className={`${styles.actionButton} p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600`}
       >
         <FaCopy />
       </button>
-      <button aria-label="Bookmark post" role="button" className={styles.actionButton}>
+      <button aria-label="Bookmark post" role="button" className={`${styles.actionButton} p-2 bg-green-500 text-white rounded-full hover:bg-green-600`}>
         <FaBookmark />
       </button>
       <button
@@ -136,7 +136,7 @@ export const SinglePost = () => {
           };
           navigator.share(shareData).catch(console.error);
         }}
-        className={styles.actionButton}
+        className={`${styles.actionButton} p-2 bg-purple-500 text-white rounded-full hover:bg-purple-600`}
       >
         <FaShareAlt />
       </button>
@@ -144,20 +144,20 @@ export const SinglePost = () => {
   </div>
 </div>
 
-            {post?.img && (
-              <div className={styles.imageContainer}>
-                <Image
-                  src={post?.img}
-                  alt=""
-                  fill
-                  priority={true}
-                  sizes="(max-width: 100px)"
-                  className={styles.image}
-                />
-              </div>
-            )}
+             {post?.img && (
+               <div className={`${styles.imageContainer} w-full h-auto my-4`}>
+                 <Image
+                   src={post?.img}
+                   alt="Post image"
+                   fill
+                   priority={true}
+                   sizes="(max-width: 100px)"
+                   className={`${styles.image} rounded-lg`}
+                 />
+               </div>
+             )}
           </div>
-          <div className={styles.actionsContainer}>
+          <div className={`${styles.actionsContainer} flex justify-between items-center mt-4`}>
             <div
               className={`${
                 post?.user.name === currentUser?.name
@@ -169,13 +169,12 @@ export const SinglePost = () => {
             </div>
             {/* TODO: <div>Update</div> */}
           </div>
-          <div className={styles.content}>
+          <div className={`${styles.content} mt-8`}>
             <div className={styles.post}>
               <div
-                className={styles.description}
+                className={`${styles.description} text-lg leading-relaxed`}
                 dangerouslySetInnerHTML={{ __html: post?.desc || '' }}
               />
-
             </div>
             <Menu />
           </div>
