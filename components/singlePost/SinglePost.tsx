@@ -111,33 +111,35 @@ export const SinglePost = () => {
   <div className={styles.postMeta}>
     <span className={styles.category}>Category: {post?.catSlug}</span>
     <div className={styles.actions}>
-<button
-  aria-label="Copy link"
-  role="button"
-  onClick={() => {
-    navigator.clipboard.writeText(window.location.href);
-    toast({ title: 'Link copied to clipboard!' });
-  }}
->
-  <FaCopy />
-</button>
-<button aria-label="Bookmark post" role="button">
-  <FaBookmark />
-</button>
-<button
-  aria-label="Share post"
-  role="button"
-  onClick={() => {
-    const shareData = {
-      title: post?.title,
-      text: post?.desc,
-      url: window.location.href,
-    };
-    navigator.share(shareData).catch(console.error);
-  }}
->
-  <FaShareAlt />
-</button>
+      <button
+        aria-label="Copy link"
+        role="button"
+        onClick={() => {
+          navigator.clipboard.writeText(window.location.href);
+          toast({ title: 'Link copied to clipboard!' });
+        }}
+        className={styles.actionButton}
+      >
+        <FaCopy />
+      </button>
+      <button aria-label="Bookmark post" role="button" className={styles.actionButton}>
+        <FaBookmark />
+      </button>
+      <button
+        aria-label="Share post"
+        role="button"
+        onClick={() => {
+          const shareData = {
+            title: post?.title,
+            text: post?.desc,
+            url: window.location.href,
+          };
+          navigator.share(shareData).catch(console.error);
+        }}
+        className={styles.actionButton}
+      >
+        <FaShareAlt />
+      </button>
     </div>
   </div>
 </div>
